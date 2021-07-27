@@ -1,52 +1,11 @@
 module.exports = {
   root: true,
-  parser: 'vue-eslint-parser',
-  parserOptions: {
-    parser: '@typescript-eslint/parser',
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-  extends: [
-    'plugin:vue/vue3-recommended',
-    'plugin:vue/base',
-    'plugin:prettier/recommended',
-  ],
+  parser: '@typescript-eslint/parser',
   plugins: [
     '@typescript-eslint',
-    'prettier',
   ],
-
-  rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        'endOfLine': 'auto',
-      },
-    ],
-    // not needed for vue 3
-    'vue/no-multiple-template-root': 'off',
-    'vue/multi-word-component-names': 'off',
-    'vue/require-default-prop': 'error',
-    'no-unused-vars': [
-      'error',
-      {
-        'argsIgnorePattern': '^_',
-        'varsIgnorePattern': '^_',
-        'caughtErrorsIgnorePattern': '^_',
-      },
-    ],
-  },
-  overrides: [
-    {
-      files: [
-        '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)',
-      ],
-      env: {
-        jest: true,
-      },
-    },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
-};
+}

@@ -33,10 +33,6 @@ jobs:
         npm test --passWithNoTests
       env:
         CI: true
-  web-deploy:
-    name: 🎉 Deploy
-    runs-on: ubuntu-latest
-    steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
 
@@ -52,3 +48,5 @@ jobs:
           **/.git*/**
           **/node_modules/**
           fileToExclude.txt
+
+    

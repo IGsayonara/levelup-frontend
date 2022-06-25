@@ -33,10 +33,6 @@ jobs:
         npm test --passWithNoTests
       env:
         CI: true
-
-    - name: Deploy to ftp
-      run: |
-        git push heroku HEAD:master -f
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest

@@ -46,7 +46,7 @@ jobs:
         server: ftp.luckyigor.world
         username: ${{ secrets.LEVEL_UP_USERNAME }}
         password: ${{ secrets.LEVEL_UP_PASSWORD }}
-        local-dir: ./dist/	
+        local-dir: /dist/	
         exclude: |
           **/.git*
           **/.git*/**

@@ -1,0 +1,58 @@
+name: LayingPipe
+
+on: 
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      -master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - uses: actions/setup-node@v2
+      with:
+          node-version: '14'
+    - name: npm install
+      run: |
+        npm install
+
+    - name: npm build
+      run: npm build --if-present
+
+    - name: npm test
+      id: tests
+      run: |
+        npm test --passWithNoTests
+      env:
+        CI: true
+
+    - name: Deploy to ftp
+      run: |
+        git push heroku HEAD:master -f
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ftp.luckyigor.world
+        username: ${{ secrets.LEVEL_UP_USERNAME }}
+        password: ${{ secrets.LEVEL_UP_PASSWORD }}
+        local-dir: ./dist	
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          fileToExclude.txt

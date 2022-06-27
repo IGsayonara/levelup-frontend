@@ -12,6 +12,8 @@ jobs:
         uses: actions/checkout@master
       - name: Install Dependencies
         run: npm install
+      - name: Unit tests
+        run: npm run test:unit
       - name: Build
         run: npm run build
       - name: Upload bundle

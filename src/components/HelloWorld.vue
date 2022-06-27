@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ msg }}
+    {{ `${msg} ${env}` }}
   </div>
 </template>
 
@@ -12,8 +12,11 @@ import {Options, Vue} from 'vue-class-component';
     msg: String
   }
 })
+
+
 export default class HelloWorld extends Vue {
   msg!: string
+  env = process.env.VUE_APP_SWICH
 }
 </script>
 

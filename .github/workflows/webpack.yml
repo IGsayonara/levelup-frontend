@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+env:
+  VUE_APP_SWICH: it's my env variable
 jobs:
   build:
     name: Build App

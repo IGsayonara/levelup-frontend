@@ -38,7 +38,7 @@ jobs:
         with:
           user: ${{ secrets.LEVEL_UP_USERNAME }} # Ftp user Ex:
           password: ${{ secrets.LEVEL_UP_PASSWORD }} # Ftp password Ex:
-          host: 92.204.219.112 # ${{ secrets.LEVEL_UP_HOST }}
+          host: ${{ secrets.LEVEL_UP_HOST }} # Ftp host Ex:
           # port: ${{ secrets.FTP_PORT }} # (optional) FTP port, defaults to 21
           path: dist # Folder to deploy Ex: apps/frontend/dist or dist
           into: ./ # Where to place the files in your ftp

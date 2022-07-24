@@ -1,0 +1,49 @@
+name: Deploy app
+on:
+  push:
+    branches:
+      - master
+env:
+  VUE_APP_SWICH: it's my env variable
+jobs:
+  build:
+    name: Build App
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Import commit files
+        uses: actions/checkout@master
+      - name: Install Dependencies
+        run: npm install
+      - name: Unit tests
+        run: npm run test:unit
+      - name: Build
+        run: npm run build
+      - name: Upload bundle
+        uses: actions/upload-artifact@master
+        with:
+          name: my_artifact_name # Upload artifact with name `dist`
+          path: dist # Upload content of `dist` folder
+      - name: Debug Files
+        run: ls
+  deploy:
+    name: Deploy App
+    runs-on: [ubuntu-latest]
+    needs: [build]
+    steps:
+      - name: Download bundle
+        uses: actions/download-artifact@master
+        with:
+          name: my_artifact_name # Download artifact named `my_artifact_name` (matches build step: Upload bundle)
+          path: dist # Optional, downloads to current working directory under folder {artifact_name} if not specified
+      - name: Debug Files
+        run: ls
+      - name: Upload to FTP
+        uses: isthatcentered/dist-to-ftp@master
+        with:
+          user: ${{ secrets.LEVEL_UP_USERNAME }} # Ftp user Ex:
+          password: ${{ secrets.LEVEL_UP_PASSWORD }} # Ftp password Ex:
+          host: ${{ secrets.LEVEL_UP_HOST }} # Ftp host Ex:
+          # port: ${{ secrets.FTP_PORT }} # (optional) FTP port, defaults to 21
+          path: dist # Folder to deploy Ex: apps/frontend/dist or dist
+          into: ./ # Where to place the files in your ftp
+          cleanupExisting: true # (Optional), Remove already existing files inside FTP destination folder (`into` parameter)

@@ -2,6 +2,7 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
   <div>Say meow feature</div>
+  <div>Say grr feature</div>
 </template>
 
 <script lang="ts">

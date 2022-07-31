@@ -18,4 +18,4 @@ jobs:
         url: ${{ secrets.JENKINS_URL }}
         user: ${{ secrets.JENKINS_USER }}
         token: ${{ secrets.JENKINS_TOKEN }}
-        job: "build master"
+        job: "deploy to dev"

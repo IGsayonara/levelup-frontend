@@ -1,0 +1,39 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Jenkins checks
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "master" branch
+  pull_request:
+    branches: [ "master" ]
+    types: [ "opened" ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Trigger Jenkins Job and Return Result
+      # You may pin to the exact commit or the version.
+      # uses: mickeygoussetorg/trigger-jenkins-job@8034c13509b983148d9b9926e5d9ab05d239ac6d
+        uses: mickeygoussetorg/trigger-jenkins-job@v1
+        with:
+          # URL of the Jenkins server
+          jenkins-server: ${{ secrets.JENKINS_URL }}
+          # The name of the jenkins job to run
+          jenkins-job: "prebuild_pr"
+          # User name for accessing Jenkins. Store this in a secret for security
+          jenkins-username: ${{ secrets.JENKINS_USER }}
+          # Personal Access Token for accessing Jenkins. Store this in a secret for security
+          jenkins-pat: ${{ secrets.JENKINS_TOKEN }}
+          # How often (seconds) to poll the jenkins server for results
+          # poll-time: # default is 10
+          # How long (seconds) to poll before the action times out
+          # timeout-value: # default is 600
+          # true/false - turns on verbose logging
+          # verbose: # optional

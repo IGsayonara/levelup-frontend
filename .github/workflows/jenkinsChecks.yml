@@ -24,7 +24,7 @@ jobs:
           jenkins-url: ${{ secrets.JENKINS_URL }}
           jenkins-token: ${{ secrets.JENKINS_TOKEN }}
           user: ${{ secrets.JENKINS_USER}}
-          job-path: "job/prebuild_pr"
-          job-params: "{'git_branch': 'branch name'}"
+          job-path: "job/test"
+          # job-params: "{'git_branch': 'branch name'}"
       - name: Get job status
         run: echo "Job status is ${{ steps.job-build.outputs.job_status }}"

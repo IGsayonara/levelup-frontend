@@ -1,0 +1,18 @@
+name: trigger jenkins job
+on:
+  # Triggers the workflow on push or pull request events but only for the "master" branch
+  pull_request:
+    branches:
+      -master
+    types:
+      -open
+
+jobs:
+
+  build:
+    name: Prebuild
+    runs-on: ubuntu-latest
+    steps:
+      name: step1
+      run: echo meow
+

@@ -25,6 +25,6 @@ jobs:
           jenkins-token: ${{ secrets.JENKINS_TOKEN }}
           jenkins-user: ${{ secrets.JENKINS_USER }}
           jenkins-job: "test"
-          jenkins-job-params: "{ 'branchName': '${{ github.head_ref }}' }"
+          jenkins-job-params: "{ 'branchName': ${{ github.head_ref }} }"
           jenkins-wait-job: "wait"
           jenkins-ssl-verify: "false"

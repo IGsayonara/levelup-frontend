@@ -6,7 +6,7 @@ name: Jenkins checks
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   pull_request:
-    branches: [ "master" ]
+    branches: [ "develop" ]
     types: [ "opened", "reopened", "synchronize" ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -24,7 +24,7 @@ jobs:
           jenkins-url: ${{ secrets.JENKINS_URL }}
           jenkins-token: ${{ secrets.JENKINS_TOKEN }}
           jenkins-user: ${{ secrets.JENKINS_USER }}
-          jenkins-job: "test"
+          jenkins-job: "pr build check"
           jenkins-job-params: '{"branchName":"${{github.head_ref}}"}'
           jenkins-wait-job: "wait"
           jenkins-ssl-verify: "false"

@@ -1,28 +1,11 @@
 <template>
-  <div>
-    <p>this is my main vue app</p>
-    <div id="learnEnglishWords"></div>
-    <another-vue-app/>
-  </div>
+  <div>This is my clear App.vue</div>
 </template>
 
 <script lang="ts">
-import { Vue, Options } from 'vue-class-component';
-import { createApp } from 'vue'
-import AnotherVueApp from '../../levelup-learn-english-words/src/App.vue'
+import { Vue } from 'vue-class-component';
 
-@Options({
-  components: {
-    AnotherVueApp
-  },
-})
-
-export default class App extends Vue {
-  mounted(){
-    console.log(666)
-    createApp(AnotherVueApp).mount('#learnEnglishWords')
-  }
-}
+export default class App extends Vue {}
 </script>
 
 <style>

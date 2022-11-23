@@ -10,8 +10,7 @@ describe('Skill Card component tests', () => {
     wrapper = getWrapper();
   });
 
-  it('Skill Card required props should be set up', () => {
-    console.log(wrapper);
+  it('Skill Card should exist', () => {
     expect(wrapper?.exists()).toBe(true);
   });
 });

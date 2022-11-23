@@ -1,15 +1,20 @@
 <template>
-  <div>{{ title }}{{ description }}</div>
+  <div>{{ title }}</div>
   <div>{{ imageUrl }}</div>
   <div>{{ description }}</div>
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  title?: string
-  imageUrl: string
-  description: string
-}>()
+interface Props {
+  title: string;
+  imageUrl?: string;
+  description?: string;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  imageUrl: '404',
+  description: '',
+});
 </script>
 
 <style></style>

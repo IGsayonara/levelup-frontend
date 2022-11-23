@@ -6,6 +6,7 @@ module.exports = {
     sourceType: 'module',
   },
   extends: ['plugin:vue/vue3-recommended', 'plugin:vue/base', 'plugin:prettier/recommended'],
+
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
@@ -13,4 +14,12 @@ module.exports = {
     'vue/no-multiple-template-root': 'off',
     'vue/multi-word-component-names': 'off',
   },
-}
+  overrides: [
+    {
+      files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
+      env: {
+        jest: true,
+      },
+    },
+  ],
+};

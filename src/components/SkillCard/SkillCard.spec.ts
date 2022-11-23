@@ -1,7 +1,7 @@
 import { shallowMount, VueWrapper } from '@vue/test-utils';
 
 const getWrapper = () => {
-  return shallowMount(require('./index.vue'));
+  return shallowMount(import('./index.vue'));
 };
 
 describe('Skill Card component tests', () => {
@@ -10,8 +10,7 @@ describe('Skill Card component tests', () => {
     wrapper = getWrapper();
   });
 
-  it('Skill Card required props should be set up', () => {
-    console.log(wrapper);
+  it('Skill Card should exist', () => {
     expect(wrapper?.exists()).toBe(true);
   });
 });

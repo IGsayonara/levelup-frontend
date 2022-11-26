@@ -13,6 +13,8 @@ module.exports = {
     // not needed for vue 3
     'vue/no-multiple-template-root': 'off',
     'vue/multi-word-component-names': 'off',
+    'vue/require-default-prop': 'error',
+    'no-unused-vars': 'error',
   },
   overrides: [
     {

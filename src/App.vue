@@ -1,6 +1,9 @@
 <template>
   <div>
-    <SkillCard />
+    <Suspense>
+      <SkillCard />
+      <template #fallback> Loading... </template>
+    </Suspense>
   </div>
 </template>
 

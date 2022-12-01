@@ -1,3 +1,10 @@
 body{
   font-family: Roboto;
 }
+
+a {
+  color: #008000;
+  &:hover {
+    border-bottom: 1px solid #008000;
+  }
+}

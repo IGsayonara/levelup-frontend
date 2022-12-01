@@ -11,8 +11,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
 interface Props {
   title: string;
   imageUrl?: string;
@@ -23,15 +21,6 @@ withDefaults(defineProps<Props>(), {
   imageUrl: '/img/404.jpg',
   description: 'Simple description for testing Simple description for testing Simple description for testing Simple description for testing Simple description for testing',
 });
-
-const asyncData = ref(false);
-
-const myPromise: Promise<boolean> = new Promise((resolve) => {
-  setTimeout(() => {
-    resolve(true);
-  }, 5000);
-});
-asyncData.value = await myPromise;
 </script>
 
 <style lang="scss" scoped>

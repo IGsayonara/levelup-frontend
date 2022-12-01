@@ -1,12 +1,16 @@
 <template>
   <div class="wrapper">
-    <div v-for="i in 9" :key="i">
-      <SkillCard :title="'My title ' + i + 1" />
+    <div v-for="i in 3" :key="i">
+      <AppCard :title="'My title ' + i" />
+    </div>
+    <div v-for="i in 3" :key="i">
+      <SkillCard :title="'Skill ' + i" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import AppCard from '@/components/AppCard/index.vue';
 import SkillCard from '@/components/SkillCard/index.vue';
 </script>
 

@@ -1,18 +1,31 @@
 <template>
-  <AppBanner description="Done by <span style='color: #ff8c00;'>Ihor Didunik</span> during fulfilment of personal development plan" title="Funny Self Development" />
-  <div class="page-container">
-    <SectionTitle title="Mini apps" link-text="See more" />
-    <div class="app-wrapper">
-      <div v-for="i in 4" :key="i">
-        <AppCard :title="'My title ' + i" />
+  <section>
+    <AppBanner description="Done by <span style='color: #ff8c00;'>Ihor Didunik</span> during fulfilment of personal development plan" title="Funny Self Development" />
+  </section>
+  <section>
+    <div class="container">
+      <div class="section-title-wrapper">
+        <SectionTitle title="Mini apps" link-text="See more" />
+      </div>
+      <div class="row">
+        <div v-for="i in 4" :key="i" class="col-12 col-md-6 app-card-col">
+          <AppCard :title="'My title ' + i" />
+        </div>
       </div>
     </div>
-    <div class="skill-wrapper">
-      <div v-for="i in 12" :key="i">
-        <SkillCard :title="'Skill ' + i" />
+  </section>
+  <section>
+    <div class="container">
+      <div class="section-title-wrapper">
+        <SectionTitle title="Learned skills" link-text="See more" />
+      </div>
+      <div class="row">
+        <div v-for="i in 12" :key="i" class="col-6 col-md-3 skill-card-col">
+          <SkillCard :title="'Skill ' + i" />
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -22,19 +35,15 @@ import AppBanner from '@/components/AppBanner/index.vue';
 import SkillCard from '@/components/SkillCard/index.vue';
 </script>
 
-<style>
-.page-container {
-  padding: 24px;
+<style scoped>
+.skill-card-col,
+.app-card-col {
+  margin-bottom: 24px;
 }
-.app-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 24px;
+section {
+  margin-bottom: 64px;
 }
-.skill-wrapper {
-  padding: 24px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 24px;
+.section-title-wrapper {
+  margin-bottom: 40px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="app-banner">
-    <div class="app-banner__text-wrapper page-container">
+    <div class="app-banner__text-wrapper container">
       <h1 class="title">{{ title }}</h1>
       <div class="description" v-html="description"></div>
     </div>

@@ -1,4 +1,5 @@
 <template>
+  <AppBanner description="Done by <span style='color: #ff8c00;'>Ihor Didunik</span> during fulfilment of personal development plan" title="Funny Self Development" />
   <div class="page-container">
     <SectionTitle title="Mini apps" link-text="See more" />
     <div class="app-wrapper">
@@ -17,6 +18,7 @@
 <script setup lang="ts">
 import SectionTitle from '@/components/SectionTitle/index.vue';
 import AppCard from '@/components/AppCard/index.vue';
+import AppBanner from '@/components/AppBanner/index.vue';
 import SkillCard from '@/components/SkillCard/index.vue';
 </script>
 

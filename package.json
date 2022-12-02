@@ -5,15 +5,16 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:prod": "vue-cli-service build --mode prod",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:prod": "vue-cli-service build --mode prod"
   },
   "dependencies": {
     "bootstrap-scss": "^5.2.2",
     "core-js": "^3.8.3",
     "scss-reset": "^1.2.2",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -23,6 +24,7 @@
     "@typescript-eslint/parser": "^5.41.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "^5.0.8",
     "@vue/cli-plugin-typescript": "^4.5.17",
     "@vue/cli-plugin-unit-jest": "^4.5.18",
     "@vue/cli-service": "^5.0.8",

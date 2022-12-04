@@ -38,12 +38,12 @@ import SkillCard from '@/components/SkillCard/index.vue';
 <style lang="scss" scoped>
 .skill-card-col,
 .app-card-col {
-  margin-bottom: 24px;
+  margin-bottom: 3rem;
 }
 section {
-  margin-bottom: 64px;
+  margin-bottom: 8rem;
 }
 .section-title-wrapper {
-  margin-bottom: 40px;
+  margin-bottom: 5rem;
 }
 </style>

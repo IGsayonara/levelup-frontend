@@ -26,7 +26,7 @@ withDefaults(defineProps<Props>(), {
 <style lang="scss" scoped>
 .app-card {
   display: flex;
-  padding: 24px;
+  padding: 3rem;
   border: 1px solid #e5e5e5;
   border-radius: 41px;
   background-color: white;
@@ -34,14 +34,14 @@ withDefaults(defineProps<Props>(), {
   transition: all 0.3s ease-in;
 
   &__image-wrapper {
-    width: 120px;
-    height: 120px;
-    margin-right: 24px;
+    width: 15rem;
+    height: 15rem;
+    margin-right: 3rem;
 
     .image {
       width: 100%;
       height: 100%;
-      min-width: 120px;
+      min-width: 15rem;
       border: 1px solid #e5e5e5;
       border-radius: 25%;
       transition: all 0.3s ease-in;
@@ -55,14 +55,14 @@ withDefaults(defineProps<Props>(), {
 
     .title {
       width: 100%;
-      font-size: 24px;
+      font-size: 3rem;
       font-weight: bold;
-      margin-bottom: 24px;
+      margin-bottom: 3rem;
       transition: all 0.3s ease-in;
     }
 
     .description {
-      font-size: 14px;
+      font-size: 1.75rem;
       color: #808080;
       margin-bottom: auto;
     }

@@ -1,10 +1,16 @@
+@import '~scss-reset/_reset.scss';
+@import '~bootstrap-scss/bootstrap-grid.scss';
+@import '@/styles/global-colors.scss';
+@import '@/styles/global-fonts.scss';
+
+
 body{
   font-family: Roboto;
 }
 
 a {
-  color: #008000;
+  color: $green;
   &:hover {
-    border-bottom: 1px solid #008000;
+    border-bottom: 1px solid $green;
   }
 }

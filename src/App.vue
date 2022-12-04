@@ -1,9 +1,10 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <AppHeader />
   <router-view />
 </template>
+
+<script setup>
+import AppHeader from '@/components/AppHeader/index.vue';
+</script>
 
 <style lang="scss"></style>

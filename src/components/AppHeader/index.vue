@@ -45,7 +45,7 @@ export default {
         width: 0;
         left: 0;
         height: 2px;
-        background-color: #ff8c00;
+        background-color: $orange;
         transition: all 0.3s ease-in;
       }
 

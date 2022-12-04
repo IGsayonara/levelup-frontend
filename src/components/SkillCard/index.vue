@@ -42,12 +42,12 @@ withDefaults(defineProps<Props>(), {
   }
 
   &:hover {
-    border-color: #ff8c00;
-    filter: drop-shadow(1px 1px 6px rgba(255, 140, 0, 1));
+    border-color: $orange;
+    filter: drop-shadow(1px 1px 6px $orange);
   }
   &:hover & {
     &__title {
-      color: #ff8c00;
+      color: $orange;
     }
   }
 }

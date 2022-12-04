@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="banner-wrapper">
     <AppBanner description="Done by <span style='color: #ff8c00;'>Ihor Didunik</span> during fulfilment of personal development plan" title="Funny Self Development" />
   </section>
   <section>
@@ -35,7 +35,7 @@ import AppBanner from '@/components/AppBanner/index.vue';
 import SkillCard from '@/components/SkillCard/index.vue';
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .skill-card-col,
 .app-card-col {
   margin-bottom: 24px;

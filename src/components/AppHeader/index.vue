@@ -22,17 +22,17 @@ export default {
 
 <style scoped lang="scss">
 .app-header {
-  padding: 24px 0;
+  padding: 3rem 0;
 
   .navigation {
     a {
       position: relative;
       color: black;
-      font-size: 14px;
+      font-size: 1.75rem;
       font-weight: 500;
       text-transform: uppercase;
       text-decoration: none;
-      margin-right: 35px;
+      margin-right: 4.5rem;
 
       &:hover {
         border-bottom: none;

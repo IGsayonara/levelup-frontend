@@ -21,8 +21,8 @@ withDefaults(defineProps<Props>(), {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 54px;
-  padding: 16px;
+  height: 7rem;
+  padding: 2rem;
   border: 1px solid #e5e5e5;
   border-radius: 18px;
   background-color: white;
@@ -31,14 +31,14 @@ withDefaults(defineProps<Props>(), {
 
   &__title {
     width: 100%;
-    font-size: 14px;
+    font-size: 1.75rem;
     font-weight: 500;
     transition: all 0.3s ease-in;
   }
 
   &__image {
-    width: 36px;
-    height: 36px;
+    width: 4.5rem;
+    height: 4.5rem;
   }
 
   &:hover {

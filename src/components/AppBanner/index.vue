@@ -23,7 +23,7 @@ withDefaults(defineProps<Props>(), {
 <style scoped lang="scss">
 .app-banner {
   width: 100%;
-  height: 642px;
+  height: 80rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -32,12 +32,12 @@ withDefaults(defineProps<Props>(), {
     color: white;
 
     .title {
-      font-size: 48px;
-      margin-bottom: 40px;
+      font-size: 6rem;
+      margin-bottom: 5rem;
     }
 
     .description {
-      font-size: 24px;
+      font-size: 3rem;
     }
   }
 

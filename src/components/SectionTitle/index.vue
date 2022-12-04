@@ -23,14 +23,14 @@ defineEmits(['linkClick']);
   width: 100%;
 
   &__heading {
-    font-size: 36px;
+    font-size: 4.5rem;
     font-weight: bold;
-    margin-right: 8px;
+    margin-right: 1rem;
   }
 
   &__link {
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 2rem;
+    line-height: 2rem;
     font-weight: 500;
     cursor: pointer;
 

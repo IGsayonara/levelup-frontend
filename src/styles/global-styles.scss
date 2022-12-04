@@ -4,6 +4,14 @@
 @import '@/styles/global-fonts.scss';
 
 
+
+html{
+  font-size: 8px;
+  @include media-breakpoint-down(md){
+    font-size: 7px;
+  }
+}
+
 body{
   font-family: Roboto;
 }

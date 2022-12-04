@@ -8,7 +8,7 @@
         <SectionTitle title="Mini apps" link-text="See more" />
       </div>
       <div class="row">
-        <div v-for="i in 4" :key="i" class="col-12 col-md-6 app-card-col">
+        <div v-for="i in 4" :key="i" class="col-12 col-xl-6 app-card-col">
           <AppCard :title="'My title ' + i" />
         </div>
       </div>
@@ -20,7 +20,7 @@
         <SectionTitle title="Learned skills" link-text="See more" />
       </div>
       <div class="row">
-        <div v-for="i in 12" :key="i" class="col-6 col-md-3 skill-card-col">
+        <div v-for="i in 12" :key="i" class="col-12 col-sm-6 col-md-3 skill-card-col">
           <SkillCard :title="'Skill ' + i" />
         </div>
       </div>

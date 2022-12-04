@@ -24,6 +24,12 @@ export default {
 .app-header {
   padding: 3rem 0;
 
+  .logo {
+    img {
+      width: 23rem;
+    }
+  }
+
   .navigation {
     a {
       position: relative;

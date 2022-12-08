@@ -28,7 +28,7 @@ withDefaults(defineProps<Props>(), {
   display: flex;
   padding: 3rem;
   border: 1px solid #e5e5e5;
-  border-radius: 41px;
+  border-radius: 4rem;
   background-color: white;
   cursor: pointer;
   transition: all 0.3s ease-in;
@@ -62,7 +62,6 @@ withDefaults(defineProps<Props>(), {
     }
 
     .description {
-      font-size: 1.75rem;
       color: #808080;
       margin-bottom: auto;
     }

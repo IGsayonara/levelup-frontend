@@ -40,9 +40,11 @@ import SkillCard from '@/components/SkillCard/index.vue';
 .app-card-col {
   margin-bottom: 3rem;
 }
+
 section {
   margin-bottom: 8rem;
 }
+
 .section-title-wrapper {
   margin-bottom: 5rem;
 }

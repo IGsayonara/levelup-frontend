@@ -34,11 +34,10 @@ export default {
     a {
       position: relative;
       color: black;
-      font-size: 1.75rem;
       font-weight: 500;
       text-transform: uppercase;
       text-decoration: none;
-      margin-right: 4.5rem;
+      margin-left: 4.5rem;
 
       &:hover {
         border-bottom: none;

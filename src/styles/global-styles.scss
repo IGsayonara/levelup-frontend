@@ -1,19 +1,13 @@
-@import '~scss-reset/_reset.scss';
-@import '~bootstrap-scss/bootstrap-grid.scss';
-@import '@/styles/global-colors.scss';
-@import '@/styles/global-fonts.scss';
-
-
-
 html{
   font-size: 8px;
   @include media-breakpoint-down(md){
-    font-size: 7px;
+    font-size: 6px;
   }
 }
 
 body{
   font-family: Roboto;
+  font-size: 14px;
 }
 
 a {

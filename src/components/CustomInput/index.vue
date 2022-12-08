@@ -8,7 +8,6 @@
 </template>
 <script lang="ts"></script>
 <script setup lang="ts">
-// eslint-disable-next-line no-unused-vars
 import { ref, watchPostEffect, watchEffect, watchSyncEffect, onMounted, onUpdated, onBeforeUpdate, onBeforeMount } from 'vue';
 interface Props {
   id: string;

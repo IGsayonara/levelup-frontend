@@ -19,9 +19,19 @@
 
 <script setup>
 import AppButton from '@/components/AppButton/index.vue';
+import { useViewpoint } from '@/composables/viewpoint-composable/index';
+import { onMounted, watch } from 'vue';
+const { currentBreakpoint } = useViewpoint();
+
 const redirectToGithub = () => {
   window.open('https://github.com/IGsayonara/levelup-frontend', '_blank');
 };
+onMounted(() => {
+  console.log(currentBreakpoint.value);
+});
+watch(currentBreakpoint, (newValue, oldValue) => {
+  console.log(`${oldValue} to ${newValue}`);
+});
 </script>
 
 <style scoped lang="scss">

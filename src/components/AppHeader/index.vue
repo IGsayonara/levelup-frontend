@@ -9,14 +9,18 @@
           <router-link to="/">Home</router-link>
           <router-link to="/about">About</router-link>
         </nav>
+        <div class="git-button">
+          <AppButton text="View on Github" primary-color="black" secondary-color="white" @click="redirectToGithub" />
+        </div>
       </div>
     </div>
   </header>
 </template>
 
-<script>
-export default {
-  name: 'Index',
+<script setup>
+import AppButton from '@/components/AppButton/index.vue';
+const redirectToGithub = () => {
+  window.open('https://github.com/IGsayonara/levelup-frontend', '_blank');
 };
 </script>
 
@@ -31,6 +35,7 @@ export default {
   }
 
   .navigation {
+    margin-left: auto;
     a {
       position: relative;
       color: black;
@@ -58,6 +63,10 @@ export default {
         width: 100%;
       }
     }
+  }
+
+  .git-button {
+    margin-left: 4.5rem;
   }
 
   &__wrapper {

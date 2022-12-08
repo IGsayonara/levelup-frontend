@@ -24,7 +24,7 @@ withDefaults(defineProps<Props>(), {
   height: 7rem;
   padding: 2em 1.5em;
   border: 1px solid #e5e5e5;
-  border-radius: 2em;
+  border-radius: 4rem;
   background-color: white;
   transition: all 0.3s ease-in;
   cursor: pointer;

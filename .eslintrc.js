@@ -14,7 +14,14 @@ module.exports = {
     'vue/no-multiple-template-root': 'off',
     'vue/multi-word-component-names': 'off',
     'vue/require-default-prop': 'error',
-    'no-unused-vars': 'error',
+    'no-unused-vars': [
+      'error',
+      {
+        'argsIgnorePattern': '^_',
+        'varsIgnorePattern': '^_',
+        'caughtErrorsIgnorePattern': '^_',
+      },
+    ],
   },
   overrides: [
     {

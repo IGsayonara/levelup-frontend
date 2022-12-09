@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import { getValidatedId, isIdValid } from '@/utils/id-util';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -8,12 +9,26 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView,
   },
   {
-    path: '/about',
+    path: '/about/:id',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    props: (route) => {
+      return { id: getValidatedId(route.params.id) };
+    },
+
+    beforeEnter: (to, _from, next) => {
+      if (isIdValid(to.params.id)) {
+        next();
+      } else {
+        next('/404');
+      }
+    },
+
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+  },
+  {
+    path: '/:pathMatch(.*)',
+    name: 'NotFound',
+    component: () => import(/* webpackChunkName: "404" */ '../views/NotFound.vue'),
   },
 ];
 
@@ -23,3 +38,5 @@ const router = createRouter({
 });
 
 export default router;
+
+//TODO: add guards directory

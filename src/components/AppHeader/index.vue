@@ -7,7 +7,9 @@
         </div>
         <nav class="navigation">
           <router-link to="/">Home</router-link>
-          <router-link to="/about">About</router-link>
+          <router-link :to="{ path: '/about/123' }">About</router-link>
+          <router-link :to="{ path: '/about/meow' }">Guard</router-link>
+          <router-link :to="{ path: '/about' }">Not found</router-link>
         </nav>
         <div class="git-button">
           <AppButton text="View on Github" primary-color="black" secondary-color="white" @click="redirectToGithub" />
@@ -58,7 +60,8 @@ watch(currentBreakpoint, (newValue, oldValue) => {
         border-bottom: none;
       }
 
-      &::after {
+      &::after,
+      &.router-link-active::after {
         content: '';
         position: absolute;
         top: calc(100% + 2px);
@@ -69,7 +72,8 @@ watch(currentBreakpoint, (newValue, oldValue) => {
         transition: all 0.3s ease-in;
       }
 
-      &:hover::after {
+      &:hover::after,
+      &.router-link-active::after {
         width: 100%;
       }
     }

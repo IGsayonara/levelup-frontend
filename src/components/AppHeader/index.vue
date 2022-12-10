@@ -7,9 +7,9 @@
         </div>
         <nav class="navigation">
           <router-link to="/">Home</router-link>
-          <router-link :to="{ path: '/about/123' }">About</router-link>
-          <router-link :to="{ path: '/about/meow' }">Guard</router-link>
-          <router-link :to="{ path: '/about' }">Not found</router-link>
+          <router-link :to="{ path: '/project/123' }">Project</router-link>
+          <router-link :to="{ path: '/project/meow' }">Guard</router-link>
+          <router-link :to="{ path: '/smth' }">Not found</router-link>
         </nav>
         <div class="git-button">
           <AppButton text="View on Github" primary-color="black" secondary-color="white" @click="redirectToGithub" />

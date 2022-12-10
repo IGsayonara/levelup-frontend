@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import { toRef } from 'vue';
 import { onBeforeRouteUpdate } from 'vue-router';
-import { isIdValid } from '@/utils/id-util';
+import { projectIdGuard } from '@/router/middlewares/correctParams';
 
 interface Props {
   id: number;
@@ -17,11 +17,5 @@ interface Props {
 const props = defineProps<Props>();
 const id = toRef(props, 'id');
 
-onBeforeRouteUpdate((to, _from, next) => {
-  if (isIdValid(to.params.id)) {
-    next();
-  } else {
-    next('/404');
-  }
-});
+onBeforeRouteUpdate(projectIdGuard);
 </script>

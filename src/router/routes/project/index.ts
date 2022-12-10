@@ -1,5 +1,6 @@
 import { RouteRecordRaw } from 'vue-router';
-import { getValidatedId, isIdValid } from '@/utils/id-util';
+import { getValidatedId } from '@/utils/id-util';
+import { projectIdGuard } from '@/router/middlewares/correctParams';
 
 export const ProjectRoute: RouteRecordRaw = {
   path: '/project',
@@ -12,13 +13,7 @@ export const ProjectRoute: RouteRecordRaw = {
         return { id: getValidatedId(route.params.id) };
       },
 
-      beforeEnter: (to, _from, next) => {
-        if (isIdValid(to.params.id)) {
-          next();
-        } else {
-          next('/404');
-        }
-      },
+      beforeEnter: projectIdGuard,
 
       component: () => import(/* webpackChunkName: "project" */ '@/views/ProjectView.vue'),
     },

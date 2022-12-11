@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { routes } from '@/router/routes/routes';
+import { isLoginGuard } from '@/router/middlewares/user';
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -8,4 +9,4 @@ const router = createRouter({
 
 export default router;
 
-//TODO: add guards directory
+router.beforeEach(isLoginGuard);

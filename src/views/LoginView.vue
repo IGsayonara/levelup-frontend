@@ -16,8 +16,7 @@ const router = useRouter();
 
 const login = async () => {
   localStorage.setItem('jwe_token', 'true');
-  const failure = await router.push('/');
-  console.log(failure);
+  await router.push('/');
 };
 </script>
 

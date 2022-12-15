@@ -5,34 +5,25 @@
         <div class="logo">
           <img src="/img/logo.png" alt="Level UP" />
         </div>
-        <nav class="navigation">
-          <router-link to="/">Home</router-link>
-          <router-link :to="{ path: '/project/123' }">Project</router-link>
-          <router-link :to="{ path: '/project/meow' }">Guard</router-link>
-          <router-link :to="{ path: '/smth' }">Not found</router-link>
-        </nav>
-        <div class="git-button">
-          <AppButton text="View on Github" primary-color="black" secondary-color="white" @click="redirectToGithub" />
-        </div>
+        <DesktopNavigation v-if="!isMobileNavigation" />
+        <template v-else>
+          <div>Click me</div>
+          <MobileNavigation />
+        </template>
       </div>
     </div>
   </header>
 </template>
 
 <script setup>
-import AppButton from '@/components/AppButton/index.vue';
 import { useViewpoint } from '@/composables/viewpoint-composable/index';
-import { onMounted, watch } from 'vue';
+import { computed } from 'vue';
+import DesktopNavigation from '@/components/AppHeader/DesktopNavigation.vue';
+import MobileNavigation from '@/components/AppHeader/MobileNavigation.vue';
 const { currentBreakpoint } = useViewpoint();
 
-const redirectToGithub = () => {
-  window.open('https://github.com/IGsayonara/levelup-frontend', '_blank');
-};
-onMounted(() => {
-  console.log(currentBreakpoint.value);
-});
-watch(currentBreakpoint, (newValue, oldValue) => {
-  console.log(`${oldValue} to ${newValue}`);
+const isMobileNavigation = computed(() => {
+  return ['xs', 'sm'].includes(currentBreakpoint.value);
 });
 </script>
 
@@ -46,40 +37,7 @@ watch(currentBreakpoint, (newValue, oldValue) => {
     }
   }
 
-  .navigation {
-    margin-left: auto;
-    a {
-      position: relative;
-      color: black;
-      font-weight: 500;
-      text-transform: uppercase;
-      text-decoration: none;
-      margin-left: 4.5rem;
-
-      &:hover {
-        border-bottom: none;
-      }
-
-      &::after,
-      &.router-link-active::after {
-        content: '';
-        position: absolute;
-        top: calc(100% + 2px);
-        width: 0;
-        left: 0;
-        height: 2px;
-        background-color: $orange;
-        transition: all 0.3s ease-in;
-      }
-
-      &:hover::after,
-      &.router-link-active::after {
-        width: 100%;
-      }
-    }
-  }
-
-  .git-button {
+  .github-button:deep {
     margin-left: 4.5rem;
   }
 

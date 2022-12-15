@@ -12,6 +12,7 @@
 <style scoped lang="scss">
 .navigation {
   a {
+    position: relative;
     color: black;
     font-weight: 500;
     text-transform: uppercase;

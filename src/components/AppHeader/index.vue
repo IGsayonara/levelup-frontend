@@ -6,10 +6,7 @@
           <img src="/img/logo.png" alt="Level UP" />
         </div>
         <DesktopNavigation v-if="!isMobileNavigation" />
-        <template v-else>
-          <div>Click me</div>
-          <MobileNavigation />
-        </template>
+        <MobileNavigation v-else />
       </div>
     </div>
   </header>

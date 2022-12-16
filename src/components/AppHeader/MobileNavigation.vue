@@ -8,7 +8,7 @@
       </div>
     </template>
   </AppModal>
-  <FontAwesomeIcon icon="fa-solid fa-bars" @click="open" />
+  <FontAwesomeIcon class="burger-button" icon="fa-solid fa-bars" @click="open" />
 </template>
 
 <script setup>
@@ -55,5 +55,8 @@ watch(route, () => {
   align-items: center;
   height: 100%;
   margin: auto 0;
+}
+.burger-button {
+  cursor: pointer;
 }
 </style>

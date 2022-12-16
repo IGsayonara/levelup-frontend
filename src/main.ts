@@ -2,21 +2,13 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-
-/* import font awesome icon component */
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
-/* import specific icons */
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-
-library.add(faBars);
+import fa from './plugins/font-awesome';
 
 const app = createApp(App);
 
-app.component('FontAwesomeIcon', FontAwesomeIcon);
-
 app.use(router);
+app.use(fa);
+
 app.mount('#app');
 
 // additional global styles

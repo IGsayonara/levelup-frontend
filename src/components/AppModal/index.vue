@@ -5,7 +5,7 @@
       <div class="modal-content">
         <header v-if="$slots.header">
           <slot name="header"></slot>
-          <FontAwesomeIcon class="close-button" icon="fa-solid fa-bars" @click="close" />
+          <FontAwesomeIcon class="close-button" icon="fa-solid fa-close" @click="close" />
         </header>
         <div class="app-modal_content">
           <slot></slot>
@@ -91,6 +91,7 @@ onBeforeUnmount(() => {
     border-bottom: 1px solid #e5e5e5;
     .close-button {
       margin-left: auto;
+      cursor: pointer;
     }
   }
   .app-modal_content {

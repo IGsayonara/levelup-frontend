@@ -7,6 +7,7 @@
         </div>
         <AppNavigation />
         <AppModal />
+
         <div class="git-button">
           <AppButton text="View on Github" primary-color="black" secondary-color="white" @click="redirectToGithub" />
         </div>

@@ -3,14 +3,15 @@
     <div class="modal-close-overlay" @click="close"></div>
     <div class="app-modal__wrapper-content">
       <div class="modal-content">
-        <header>
+        <header v-if="$slots.header">
           <slot name="header"></slot>
+          <FontAwesomeIcon class="close-button" icon="fa-solid fa-bars" @click="close" />
         </header>
         <div class="app-modal_content">
-          <slot name="content"></slot>
+          <slot></slot>
         </div>
-        <footer>
-          <slot name="footer"></slot>
+        <footer v-if="$slots.footer">
+          <slot name="footer">Footer slot</slot>
         </footer>
       </div>
     </div>
@@ -19,6 +20,7 @@
 
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 const isOpen = ref(false);
 const emit = defineEmits(['close']);
 
@@ -74,14 +76,34 @@ onBeforeUnmount(() => {
 }
 
 .modal-content {
+  display: flex;
+  flex-direction: column;
   background: white;
   border: 1px solid #e5e5e5;
   border-radius: 1rem;
-  padding: 4rem 2rem;
   @include media-breakpoint-down(md) {
     width: 100%;
     height: 100%;
     border-radius: 0;
+  }
+  header {
+    display: flex;
+    border-bottom: 1px solid #e5e5e5;
+    .close-button {
+      margin-left: auto;
+    }
+  }
+  .app-modal_content {
+    height: 100%;
+    overflow-y: auto;
+  }
+  footer {
+    border-top: 1px solid #e5e5e5;
+  }
+  .app-modal_content,
+  header,
+  footer {
+    padding: 2rem;
   }
 }
 </style>

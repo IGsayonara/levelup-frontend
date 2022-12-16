@@ -1,5 +1,7 @@
 <template>
-  <button class="app-button">{{ text }}</button>
+  <button class="app-button">
+    <slot>{{ text }}</slot>
+  </button>
 </template>
 
 <script setup lang="ts">

@@ -1,7 +1,5 @@
 <template>
-  <div class="github-button">
-    <AppButton text="View on Github" primary-color="black" secondary-color="white" @click="redirectToGithub" />
-  </div>
+  <AppButton primary-color="black" class="github-button" secondary-color="white" @click="redirectToGithub">View on Github</AppButton>
 </template>
 
 <script setup lang="ts">

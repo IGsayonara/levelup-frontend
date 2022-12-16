@@ -28,7 +28,8 @@ export default {
       border-bottom: none;
     }
 
-    &::after {
+    &::after,
+    &.router-link-active::after {
       content: '';
       position: absolute;
       top: calc(100% + 2px);
@@ -39,7 +40,8 @@ export default {
       transition: all 0.3s ease-in;
     }
 
-    &:hover::after {
+    &:hover::after,
+    &.router-link-active::after {
       width: 100%;
     }
   }

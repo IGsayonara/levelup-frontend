@@ -5,34 +5,23 @@
         <div class="logo">
           <img src="/img/logo.png" alt="Level UP" />
         </div>
-        <AppNavigation />
-        <AppModal />
-
-        <div class="git-button">
-          <AppButton text="View on Github" primary-color="black" secondary-color="white" @click="redirectToGithub" />
-        </div>
+        <DesktopNavigation v-if="!isMobileNavigation" />
+        <MobileNavigation v-else />
       </div>
     </div>
   </header>
 </template>
 
 <script setup>
-import AppButton from '@/components/AppButton/index.vue';
 import { useViewpoint } from '@/composables/viewpoint-composable/index';
-import { onMounted, watch } from 'vue';
-import AppNavigation from '@/components/AppNavigation/index.vue';
-import AppModal from '@/components/AppModal/index.vue';
+import { computed } from 'vue';
+import DesktopNavigation from '@/components/AppHeader/DesktopNavigation.vue';
+import MobileNavigation from '@/components/AppHeader/MobileNavigation.vue';
 const { currentBreakpoint } = useViewpoint();
-const redirectToGithub = () => {
-  window.open('https://github.com/IGsayonara/levelup-frontend', '_blank');
-};
-onMounted(() => {
-  console.log(currentBreakpoint.value);
+
+const isMobileNavigation = computed(() => {
+  return ['xs', 'sm'].includes(currentBreakpoint.value);
 });
-watch(currentBreakpoint, (newValue, oldValue) => {
-  console.log(`${oldValue} to ${newValue}`);
-});
-window.addEventListener('resize', () => {});
 </script>
 
 <style scoped lang="scss">
@@ -45,7 +34,7 @@ window.addEventListener('resize', () => {});
     }
   }
 
-  .git-button {
+  .github-button:deep {
     margin-left: 4.5rem;
   }
 

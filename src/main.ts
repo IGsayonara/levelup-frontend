@@ -2,7 +2,14 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 
-createApp(App).use(router).mount('#app');
+import fa from './plugins/font-awesome';
+
+const app = createApp(App);
+
+app.use(router);
+app.use(fa);
+
+app.mount('#app');
 
 // additional global styles
 import 'scss-reset/_reset.scss';

@@ -1,21 +1,23 @@
 <template>
-  <div class="app-modal__wrapper">
-    <div class="modal-close-overlay" @click="close"></div>
-    <div class="app-modal__wrapper-content">
-      <div class="modal-content">
-        <header v-if="$slots.header">
-          <slot name="header"></slot>
-          <FontAwesomeIcon class="close-button" icon="fa-solid fa-close" @click="close" />
-        </header>
-        <div class="app-modal_content">
-          <slot></slot>
+  <transition mode="out-in" @after-leave="close">
+    <div v-if="isOpen" class="app-modal__wrapper">
+      <div class="modal-close-overlay" @click="runCloseAnimation"></div>
+      <div class="app-modal__wrapper-content">
+        <div class="modal-content">
+          <header v-if="$slots.header">
+            <slot name="header"></slot>
+            <FontAwesomeIcon class="close-button" icon="fa-solid fa-close" @click="runCloseAnimation" />
+          </header>
+          <div class="app-modal_content">
+            <slot></slot>
+          </div>
+          <footer v-if="$slots.footer">
+            <slot name="footer">Footer slot</slot>
+          </footer>
         </div>
-        <footer v-if="$slots.footer">
-          <slot name="footer">Footer slot</slot>
-        </footer>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script setup>
@@ -24,8 +26,12 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 const isOpen = ref(false);
 const emit = defineEmits(['close']);
 
-const close = () => {
+const runCloseAnimation = async () => {
+  isOpen.value = false;
   document.body.style.overflowY = 'auto';
+};
+
+const close = () => {
   emit('close');
 };
 
@@ -106,5 +112,15 @@ onBeforeUnmount(() => {
   footer {
     padding: 2rem;
   }
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>

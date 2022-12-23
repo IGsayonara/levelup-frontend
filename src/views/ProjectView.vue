@@ -3,6 +3,9 @@
     <div class="container">
       <div>{{ id }}</div>
     </div>
+    <div class="container">
+      <LearnProps />
+    </div>
   </section>
 </template>
 
@@ -10,6 +13,7 @@
 import { toRef } from 'vue';
 import { onBeforeRouteUpdate } from 'vue-router';
 import { projectIdGuard } from '@/router/middlewares/correctParams';
+import LearnProps from '../../learning/src/components/LearnProps/Parent.vue';
 
 interface Props {
   id: number;

@@ -10,23 +10,9 @@ export const bootstrapBreakpoints = {
 };
 
 export const useViewpoint = () => {
-  const sortedEntries = Object.entries(bootstrapBreakpoints).sort(
-    (
-      [
-        _aKey,
-        aValue,
-      ],
-      [
-        _bKey,
-        bValue,
-      ]
-    ) => bValue - aValue
-  );
+  const sortedEntries = Object.entries(bootstrapBreakpoints).sort(([_aKey, aValue], [_bKey, bValue]) => bValue - aValue);
   const getBreakpoint = (width: number) => {
-    for (const [
-      key,
-      value,
-    ] of sortedEntries) {
+    for (const [key, value] of sortedEntries) {
       if (width > value) return key;
     }
   };

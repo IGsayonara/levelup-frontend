@@ -4,3 +4,5 @@ singleQuote: true
 printWidth: 200
 tabWidth: 2
 quoteProps: preserve
+plugins:
+  - prettier-plugin-multiline-arrays

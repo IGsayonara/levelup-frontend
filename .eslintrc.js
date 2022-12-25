@@ -4,6 +4,9 @@ module.exports = {
   parserOptions: {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   extends: [
     'plugin:vue/vue3-recommended',
@@ -14,8 +17,14 @@ module.exports = {
     '@typescript-eslint',
     'prettier',
   ],
+
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': [
+      'error',
+      {
+        'endOfLine': 'auto',
+      },
+    ],
     // not needed for vue 3
     'vue/no-multiple-template-root': 'off',
     'vue/multi-word-component-names': 'off',

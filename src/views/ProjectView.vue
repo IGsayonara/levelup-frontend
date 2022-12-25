@@ -4,7 +4,7 @@
       <div>{{ id }}</div>
     </div>
     <div class="container">
-      <LearnProps />
+      <LearnJSX />
     </div>
   </section>
 </template>
@@ -13,7 +13,7 @@
 import { toRef } from 'vue';
 import { onBeforeRouteUpdate } from 'vue-router';
 import { projectIdGuard } from '@/router/middlewares/correctParams';
-import LearnProps from '../../learning/src/components/LearnProps/Parent.vue';
+import LearnJSX from '../../learning/src/components/LearnJSX/index.vue';
 
 interface Props {
   id: number;

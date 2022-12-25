@@ -4,6 +4,9 @@ module.exports = {
   parserOptions: {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   extends: [
     'plugin:vue/vue3-recommended',

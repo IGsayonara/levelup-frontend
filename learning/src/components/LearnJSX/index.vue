@@ -1,15 +1,15 @@
 <script lang="tsx">
-import { h, reactive } from 'vue';
+import { h, ref } from 'vue';
 
 export default {
   setup() {
-    const count = reactive({ count: 0 });
+    const count = ref(1);
 
     return () => [
-      h('button', { onClick: () => count.count++ }, 'Increment'),
-      h('div', count.count),
-      h('input', { onInput: (e) => (count.count = e.target.value), value: count.count }),
-      <div>{count.count}</div>,
+      h(`h${count.value}`, null, count.value),
+      <div>
+        <button onclick={() => count.value++}>click Me</button>
+      </div>,
     ];
   },
 };

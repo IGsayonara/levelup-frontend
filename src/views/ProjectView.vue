@@ -5,6 +5,7 @@
     </div>
     <div class="container">
       <LearnJSX />
+      <LearnSlots />
     </div>
   </section>
 </template>
@@ -14,6 +15,7 @@ import { toRef } from 'vue';
 import { onBeforeRouteUpdate } from 'vue-router';
 import { projectIdGuard } from '@/router/middlewares/correctParams';
 import LearnJSX from '../../learning/src/components/LearnJSX/index.vue';
+import LearnSlots from '../../learning/src/components/LearnSlots/Parent.vue';
 
 interface Props {
   id: number;

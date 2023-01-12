@@ -2,7 +2,7 @@
   <header class="app-header">
     <div class="container">
       <div class="app-header__wrapper">
-        <div class="logo">
+        <div class="logo" @click="$router.push('/')">
           <img src="/img/logo.png" alt="Level UP" />
         </div>
         <DesktopNavigation v-if="!isMobileNavigation" />
@@ -32,6 +32,7 @@ const isMobileNavigation = computed(() => {
   padding: 3rem 0;
 
   .logo {
+    cursor: pointer;
     img {
       width: 23rem;
     }

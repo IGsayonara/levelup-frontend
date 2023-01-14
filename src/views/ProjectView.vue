@@ -21,7 +21,9 @@ const props = defineProps<Props>();
 const id = toRef(props, 'id');
 
 const apiData = ref<any>();
-fetch('http://api.luckyigor.world/')
+fetch('http://api.luckyigor.world/', {
+  mode: 'no-cors',
+})
   .then((data) => {
     return data.text();
   })

@@ -4,24 +4,34 @@
       <div>{{ id }}</div>
     </div>
     <div class="container">
-      <LearnJSX />
-      <LearnSlots />
+      {{ apiData }}
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { toRef } from 'vue';
+import { toRef, ref } from 'vue';
 import { onBeforeRouteUpdate } from 'vue-router';
 import { projectIdGuard } from '@/router/middlewares/correctParams';
-import LearnJSX from '../../learning/src/components/LearnJSX/index.vue';
-import LearnSlots from '../../learning/src/components/LearnSlots/Parent.vue';
 
 interface Props {
   id: number;
 }
 const props = defineProps<Props>();
 const id = toRef(props, 'id');
+
+const apiData = ref<any>();
+fetch('http://localhost:3000')
+  .then((data) => {
+    return data.text();
+  })
+  .catch((err) => {
+    console.error(err);
+    return `There is no project with id ${id.value}`;
+  })
+  .then((text) => {
+    apiData.value = text;
+  });
 
 onBeforeRouteUpdate(projectIdGuard);
 </script>

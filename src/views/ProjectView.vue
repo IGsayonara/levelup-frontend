@@ -21,7 +21,7 @@ const props = defineProps<Props>();
 const id = toRef(props, 'id');
 
 const apiData = ref<any>();
-fetch('http://dev.luckyigor.world/api')
+fetch('http://api.luckyigor.world/')
   .then((data) => {
     return data.text();
   })

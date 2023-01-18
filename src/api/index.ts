@@ -5,6 +5,7 @@ export const test = async () => {
   const r = await fetch(BASE_URL, {
     headers: {
       'Access-Control-Allow-Origin': 'http://dev.luckyigor.world',
+      'origin': 'http://dev.luckiygor.world',
     },
   }).then((data) => {
     return data.text();

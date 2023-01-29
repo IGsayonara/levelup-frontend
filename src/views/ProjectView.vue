@@ -13,7 +13,7 @@
 import { toRef, ref, onMounted } from 'vue';
 import { onBeforeRouteUpdate } from 'vue-router';
 import { projectIdGuard } from '@/router/middlewares/correctParams';
-import { test } from '@/api';
+import { getProjectById } from '@/api/projects';
 
 interface Props {
   id: number;
@@ -24,7 +24,7 @@ const id = toRef(props, 'id');
 const apiData = ref<any>();
 
 onMounted(async () => {
-  apiData.value = await test();
+  apiData.value = await getProjectById(id.value);
 });
 
 onBeforeRouteUpdate(projectIdGuard);

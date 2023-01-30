@@ -14,7 +14,7 @@ import { computed } from 'vue';
 import { onBeforeRouteUpdate } from 'vue-router';
 import { idGuard } from '@/router/middlewares/correctParams';
 import { useStore } from 'vuex';
-import { ProjectActions } from '@/store/modules/project/action-types';
+import { SkillActions } from '@/store/modules/skill/action-types';
 
 interface Props {
   id: number;
@@ -24,14 +24,14 @@ const props = defineProps<Props>();
 const store = useStore();
 
 const title = computed(() => {
-  return store.state.ProjectModule.title;
+  return store.state.SkillModule.title;
 });
 
 const isError = computed(() => {
-  return store.state.ProjectModule.isError;
+  return store.state.SkillModule.isError;
 });
 
-store.dispatch(ProjectActions.SET_PROJECT, props.id);
+store.dispatch(SkillActions.SET_SKILL, props.id);
 
 onBeforeRouteUpdate(idGuard);
 </script>

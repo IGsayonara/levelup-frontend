@@ -1,7 +1,7 @@
 import { isIdValid } from '@/utils/id-util';
 import { NavigationGuard } from 'vue-router';
 
-export const projectIdGuard: NavigationGuard = (to) => {
+export const idGuard: NavigationGuard = (to) => {
   if (isIdValid(to.params.id)) {
     return true;
   } else {

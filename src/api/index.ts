@@ -1,9 +1,8 @@
 import axios from 'axios';
 
-const instance = axios.create({
+const axiosInstance = axios.create({
   baseURL: process.env.VUE_APP_API_URL,
   timeout: 1000,
-  // headers: {'X-Custom-Header': 'foobar'}
+  headers: { 'Authorization': `Bearer ${localStorage.getItem('jwt_token')}` },
 });
-
-export default instance;
+export default axiosInstance;

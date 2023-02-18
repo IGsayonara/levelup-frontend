@@ -4,6 +4,12 @@
   </button>
 </template>
 
+<script lang="ts">
+export default {
+  name: 'AppButton',
+};
+</script>
+
 <script setup lang="ts">
 interface Props {
   text: string;

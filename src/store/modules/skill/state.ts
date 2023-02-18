@@ -4,7 +4,7 @@ export interface State {
   isError: boolean;
 }
 
-export const state = {
+export const state: State = {
   id: null,
   title: null,
   isError: false,

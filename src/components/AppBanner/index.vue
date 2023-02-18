@@ -8,6 +8,12 @@
   </div>
 </template>
 
+<script lang="ts">
+export default {
+  name: 'AppBanner',
+};
+</script>
+
 <script setup lang="ts">
 interface Props {
   title: string;

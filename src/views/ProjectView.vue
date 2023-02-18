@@ -1,11 +1,12 @@
 <template>
   <section>
     <div v-if="!isError" class="container">
-      <h2>{{ title }}</h2>
+      <div class="section-title-wrapper">
+        <SectionTitle :title="project.title" />
+      </div>
+      <AppCard :project="project" />
     </div>
-    <div v-else class="container">
-      <h2>Project with id {{ id }} is not found :(</h2>
-    </div>
+    <div v-else class="container">smth went wrong</div>
   </section>
 </template>
 
@@ -15,20 +16,23 @@ import { onBeforeRouteUpdate } from 'vue-router';
 import { idGuard } from '@/router/middlewares/correctParams';
 import { useStore } from 'vuex';
 import { ProjectActions } from '@/store/modules/project/action-types';
+import AppCard from '@/components/AppCard/index';
+import SectionTitle from '@/components/SectionTitle/index';
 
 interface Props {
   id: number;
 }
+
 const props = defineProps<Props>();
 
 const store = useStore();
 
-const title = computed(() => {
-  return store.state.ProjectModule.title;
-});
-
 const isError = computed(() => {
   return store.state.ProjectModule.isError;
+});
+
+const project = computed(() => {
+  return store.state.ProjectModule;
 });
 
 store.dispatch(ProjectActions.SET_PROJECT, props.id);

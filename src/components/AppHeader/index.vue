@@ -30,6 +30,9 @@ const isMobileNavigation = computed(() => {
 <style scoped lang="scss">
 .app-header {
   padding: 3rem 0;
+  border-bottom: 1px solid;
+  background-color: white;
+  filter: drop-shadow(2px 2px 6px black);
 
   .logo {
     cursor: pointer;

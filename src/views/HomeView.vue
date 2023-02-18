@@ -8,8 +8,8 @@
         <SectionTitle title="Mini apps" link-text="See more" />
       </div>
       <div class="row">
-        <div v-for="i in 4" :key="i" class="col-12 col-xl-6 app-card-col">
-          <AppCard :title="'My title ' + i" />
+        <div v-for="project in projects" :key="project.id" class="col-12 col-xl-6 app-card-col">
+          <AppCard :project="project" @click="$router.push('/project/' + project.id)" />
         </div>
       </div>
     </div>
@@ -20,8 +20,8 @@
         <SectionTitle title="Learned skills" link-text="See more" />
       </div>
       <div class="row">
-        <div v-for="i in 12" :key="i" class="col-12 col-sm-6 col-md-3 skill-card-col">
-          <SkillCard :title="'Skill ' + i" />
+        <div v-for="skill in skills" :key="skill.id" class="col-12 col-sm-6 col-md-3 skill-card-col">
+          <SkillCard :title="skill.title" />
         </div>
       </div>
     </div>
@@ -33,19 +33,26 @@ import SectionTitle from '@/components/SectionTitle/index.vue';
 import AppCard from '@/components/AppCard/index.vue';
 import AppBanner from '@/components/AppBanner/index.vue';
 import SkillCard from '@/components/SkillCard/index.vue';
+import { useStore } from 'vuex';
+import { UserActions } from '@/store/modules/user/action-types';
+import { computed } from 'vue';
+
+const store = useStore();
+
+const projects = computed(() => {
+  return store.state.UserModule.projects;
+});
+
+const skills = computed(() => {
+  return store.state.UserModule.skills;
+});
+
+store.dispatch(UserActions.SET_USER);
 </script>
 
 <style lang="scss" scoped>
 .skill-card-col,
 .app-card-col {
   margin-bottom: 3rem;
-}
-
-section {
-  margin-bottom: 8rem;
-}
-
-.section-title-wrapper {
-  margin-bottom: 5rem;
 }
 </style>

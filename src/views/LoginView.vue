@@ -11,12 +11,17 @@
 <script setup>
 import AppButton from '@/components/AppButton';
 import { useRouter } from 'vue-router';
+import { authLogin } from '@/api/auth';
 
 const router = useRouter();
 
 const login = async () => {
-  localStorage.setItem('jwe_token', 'true');
-  await router.push('/');
+  try {
+    await authLogin('IG', '123');
+    await router.push('/');
+  } catch {
+    alert('smth went wrong');
+  }
 };
 </script>
 

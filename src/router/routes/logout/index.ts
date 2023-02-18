@@ -4,7 +4,7 @@ export const LogoutRoute: RouteRecordRaw = {
   path: '/logout',
   name: 'Logout',
   beforeEnter: () => {
-    localStorage.removeItem('jwe_token');
+    localStorage.removeItem('jwt_token');
     return '/login';
   },
   component: {},

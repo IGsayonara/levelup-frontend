@@ -1,15 +1,8 @@
-const BASE_URL = process.env.VUE_APP_API_URL;
-console.log(BASE_URL);
+import axios from 'axios';
 
-export const test = async () => {
-  const r = await fetch(BASE_URL, {
-    headers: {
-      'Access-Control-Allow-Origin': 'http://dev.luckyigor.world',
-      'origin': 'http://dev.luckiygor.world',
-    },
-  }).then((data) => {
-    return data.text();
-  });
-  console.log(r);
-  return r;
-};
+const axiosInstance = axios.create({
+  baseURL: process.env.VUE_APP_API_URL,
+  timeout: 1000,
+  headers: { 'Authorization': `Bearer ${localStorage.getItem('jwt_token')}` },
+});
+export default axiosInstance;

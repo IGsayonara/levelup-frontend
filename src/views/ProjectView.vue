@@ -1,31 +1,41 @@
 <template>
   <section>
-    <div class="container">
-      <div>{{ id }}</div>
+    <div v-if="!isError" class="container">
+      <div class="section-title-wrapper">
+        <SectionTitle :title="project.title" />
+      </div>
+      <AppCard :project="project" />
     </div>
-    <div class="container">
-      {{ apiData }}
-    </div>
+    <div v-else class="container">smth went wrong</div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { toRef, ref, onMounted } from 'vue';
+import { computed } from 'vue';
 import { onBeforeRouteUpdate } from 'vue-router';
-import { projectIdGuard } from '@/router/middlewares/correctParams';
-import { test } from '@/api';
+import { idGuard } from '@/router/middlewares/correctParams';
+import { useStore } from 'vuex';
+import { ProjectActions } from '@/store/modules/project/action-types';
+import AppCard from '@/components/AppCard/index';
+import SectionTitle from '@/components/SectionTitle/index';
 
 interface Props {
   id: number;
 }
+
 const props = defineProps<Props>();
-const id = toRef(props, 'id');
 
-const apiData = ref<any>();
+const store = useStore();
 
-onMounted(async () => {
-  apiData.value = await test();
+const isError = computed(() => {
+  return store.state.ProjectModule.isError;
 });
 
-onBeforeRouteUpdate(projectIdGuard);
+const project = computed(() => {
+  return store.state.ProjectModule;
+});
+
+store.dispatch(ProjectActions.SET_PROJECT, props.id);
+
+onBeforeRouteUpdate(idGuard);
 </script>

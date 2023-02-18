@@ -5,6 +5,12 @@
   </div>
 </template>
 
+<script lang="ts">
+export default {
+  name: 'SectionTitle',
+};
+</script>
+
 <script setup lang="ts">
 interface Props {
   title: string;

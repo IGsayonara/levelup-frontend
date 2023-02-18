@@ -1,9 +1,8 @@
 <template>
   <nav class="navigation">
     <router-link to="/">Home</router-link>
-    <router-link :to="{ path: '/project/123' }">Project</router-link>
-    <router-link :to="{ path: '/project/meow' }">Guard</router-link>
-    <router-link :to="{ path: '/smth' }">Not found</router-link>
+    <router-link :to="{ path: '/projects' }">Projects</router-link>
+    <router-link :to="{ path: '/skills' }">Skills</router-link>
   </nav>
 </template>
 

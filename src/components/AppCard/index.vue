@@ -1,25 +1,34 @@
 <template>
-  <div class="app-card">
+  <div v-if="project" class="app-card">
     <div class="app-card__image-wrapper">
       <img :src="imageUrl" class="image" />
     </div>
     <div class="app-card__text-wrapper">
-      <h3 class="title">{{ title }}</h3>
-      <div class="description">{{ description }}</div>
+      <h3 class="title">{{ project.title }}</h3>
+      <div class="description">{{ project.description }}</div>
     </div>
   </div>
 </template>
 
+<script lang="ts">
+export default {
+  name: 'AppCard',
+};
+</script>
+
 <script setup lang="ts">
+import { Project } from '@/types/project';
+import { computed, toRef } from 'vue';
+
 interface Props {
-  title: string;
-  imageUrl?: string;
-  description?: string;
+  project: Project;
 }
 
-withDefaults(defineProps<Props>(), {
-  imageUrl: '/img/404.jpg',
-  description: 'Simple description for testing Simple description for testing Simple description for testing Simple description for testing Simple description for testing',
+const props = defineProps<Props>();
+const project = toRef(props, 'project');
+
+const imageUrl = computed(() => {
+  return project.value.imageUrl || '/img/404.jpg';
 });
 </script>
 

@@ -1,13 +1,11 @@
+import { Project } from '@/types/project';
+
 export interface State {
-  id: number | null;
-  title: string | null;
-  description?: string | null;
+  project: Project | null;
   isError: boolean;
 }
 
 export const state: State = {
-  id: null,
-  title: null,
-  description: null,
+  project: null,
   isError: false,
 };

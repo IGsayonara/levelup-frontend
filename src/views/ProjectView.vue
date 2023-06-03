@@ -32,7 +32,7 @@ const isError = computed(() => {
 });
 
 const project = computed(() => {
-  return store.state.ProjectModule;
+  return store.state.ProjectModule.project;
 });
 
 store.dispatch(ProjectActions.SET_PROJECT, props.id);

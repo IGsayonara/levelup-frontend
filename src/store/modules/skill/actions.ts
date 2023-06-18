@@ -2,7 +2,7 @@ import { _SkillActions } from '@/store/modules/skill/action-types';
 import { SkillMutations } from '@/store/modules/skill/mutation-types';
 import { ActionTree } from 'vuex';
 import { loadSkillById } from '@/api/skill';
-import { State } from '@/store/modules/project/state';
+import { State } from '@/store/modules/skill/state';
 import { State as RootState } from '@/store/';
 import { Skill } from '@/types/skill';
 export const actions: ActionTree<State, RootState> = {

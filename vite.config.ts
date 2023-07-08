@@ -1,14 +1,24 @@
 import { defineConfig } from 'vite';
+import { fileURLToPath } from 'url';
+
 import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
   server: {
-    port: 3000,
+    port: 8080,
   },
   resolve: {
-    alias: [{ find: '@', replacement: '/src' }],
+    alias: [
+      { find: '@', replacement: '/src' },
+      {
+        find: /@\/components\/((?!.*[.](ts|js|tsx|jsx|vue)$).*$)/,
+        replacement: fileURLToPath(
+          new URL('./src/components/$1/index.vue', import.meta.url)
+        ),
+      },
+    ],
   },
   css: {
     preprocessorOptions: {

@@ -1,0 +1,33 @@
+html {
+  font-size: 8px;
+  @include media-breakpoint-down(md) {
+    font-size: 6px;
+  }
+}
+
+body {
+  font-family: Roboto;
+  font-size: 14px;
+}
+
+a {
+  color: $green;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: 1px solid $green;
+  }
+}
+
+h2 {
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+
+section {
+  margin-bottom: 8rem;
+}
+
+.section-title-wrapper {
+  margin-bottom: 5rem;
+}

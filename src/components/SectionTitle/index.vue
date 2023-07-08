@@ -1,7 +1,12 @@
 <template>
   <div class="section-title">
     <h2 class="section-title__heading">{{ title }}</h2>
-    <a v-if="linkText" class="section-title__link" @click="$emit('linkClick')">{{ linkText }}</a>
+    <a
+      v-if="linkText"
+      class="section-title__link"
+      @click="$emit('linkClick')"
+      >{{ linkText }}</a
+    >
   </div>
 </template>
 

@@ -7,10 +7,7 @@ export const mutations: MutationTree<State> = {
     state.projects = payload;
   },
   [ProjectsMutations.ADD_PROJECTS]: (state, payload: Project[]) => {
-    state.projects = [
-      ...state.projects,
-      ...payload,
-    ];
+    state.projects = [...state.projects, ...payload];
   },
   [ProjectsMutations.SET_NEXT]: (state, payload: string) => {
     state.next = payload;

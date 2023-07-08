@@ -1,6 +1,12 @@
 <template>
   <div>
-    <input :id="$props.id" type="text" :value="reactiveModelValue" v-bind="$attrs" @input="$emit('update:modelValue', $event.target.value)" />
+    <input
+      :id="$props.id"
+      type="text"
+      :value="reactiveModelValue"
+      v-bind="$attrs"
+      @input="$emit('update:modelValue', $event.target.value)"
+    />
   </div>
 </template>
 

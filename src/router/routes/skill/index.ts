@@ -15,7 +15,8 @@ export const SkillRoute: RouteRecordRaw = {
 
       beforeEnter: idGuard,
 
-      component: () => import(/* webpackChunkName: "skill" */ '@/views/SkillView.vue'),
+      component: () =>
+        import(/* webpackChunkName: "skill" */ '@/views/SkillView.vue'),
     },
   ],
 };

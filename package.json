@@ -11,13 +11,25 @@
     "test": "jest"
   },
   "dependencies": {
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/vue-fontawesome": "^3.0.2",
+    "axios": "^1.2.3",
+    "bootstrap-scss": "^5.2.2",
+    "core-js": "^3.8.3",
+    "lodash": "^4.17.21",
+    "scss-reset": "^1.2.2",
+    "v3-infinite-loading": "^1.2.2",
+    "vue-router": "^4.0.3",
+    "vuex": "^4.0.0"
   },
   "devDependencies": {
     "@types/jest": "^28.1.2",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
-    "@vitejs/plugin-vue": "^2.3.3",
+    "@vitejs/plugin-vue": "^4.2.3",
     "@vue/test-utils": "^2.0.1",
     "@vue/vue3-jest": "^28.0.0",
     "eslint": "^8.17.0",
@@ -31,9 +43,10 @@
     "prettier": "^2.7.1",
     "ts-jest": "^28.0.5",
     "typescript": "^4.7.3",
-    "vite": "^2.9.12",
+    "vite": "^4.3.9",
     "vue-eslint-parser": "^9.0.2",
-    "vue-tsc": "^0.35.2"
+    "vue-tsc": "^0.35.2",
+    "sass": "^1.56.1"
   },
   "//devDependencies": {
     "vue-tsc": "do not update to 36+ because of DefineComponent issue"

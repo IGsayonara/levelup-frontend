@@ -5,13 +5,27 @@
     </div>
   </div>
   <div class="projects_search">
-    <div class="container"><AppInput id="searchProjectInput" v-model="searchValue" placeholder="Search" label="kek" /></div>
+    <div class="container">
+      <AppInput
+        id="searchProjectInput"
+        v-model="searchValue"
+        placeholder="Search"
+        label="kek"
+      />
+    </div>
   </div>
   <section>
     <div class="container">
       <div v-if="projects.length" class="row">
-        <div v-for="project in projects" :key="project.id" class="col-12 col-xl-6 app-card-col">
-          <AppCard :project="project" @click="$router.push('/project/' + project.id)" />
+        <div
+          v-for="project in projects"
+          :key="project.id"
+          class="col-12 col-xl-6 app-card-col"
+        >
+          <AppCard
+            :project="project"
+            @click="$router.push('/project/' + project.id)"
+          />
         </div>
         <InfiniteLoading @infinite="loadMore" />
       </div>

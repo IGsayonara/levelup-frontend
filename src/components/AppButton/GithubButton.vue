@@ -1,5 +1,11 @@
 <template>
-  <AppButton primary-color="black" class="github-button" secondary-color="white" @click="redirectToGithub">View on Github</AppButton>
+  <AppButton
+    primary-color="black"
+    class="github-button"
+    secondary-color="white"
+    @click="redirectToGithub"
+    >View on Github</AppButton
+  >
 </template>
 
 <script setup lang="ts">
@@ -12,7 +18,10 @@ declare type Props = {
 const props = defineProps<Props>();
 
 const redirectToGithub = () => {
-  window.open(props.repositoryLink || 'https://github.com/IGsayonara/levelup-frontend', '_blank');
+  window.open(
+    props.repositoryLink || 'https://github.com/IGsayonara/levelup-frontend',
+    '_blank'
+  );
 };
 </script>
 

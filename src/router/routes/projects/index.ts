@@ -4,7 +4,8 @@ export const ProjectsRoute: RouteRecordRaw = {
   path: '/projects/',
   name: 'projects',
 
-  component: () => import(/* webpackChunkName: "projects" */ '@/views/ProjectsView.vue'),
+  component: () =>
+    import(/* webpackChunkName: "projects" */ '@/views/ProjectsView.vue'),
 
   meta: {
     breadCrumbs: [

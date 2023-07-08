@@ -1,6 +1,10 @@
 <template>
+  <div>123</div>
   <section class="banner-wrapper">
-    <AppBanner description="Done by <span style='color: #ff8c00;'>Ihor Didunik</span> during fulfilment of personal development plan" title="Funny Self Development" />
+    <AppBanner
+      description="Done by <span style='color: #ff8c00;'>Ihor Didunik</span> during fulfilment of personal development plan"
+      title="Funny Self Development"
+    />
   </section>
   <section>
     <div class="container">
@@ -8,8 +12,15 @@
         <SectionTitle title="Mini apps" link-text="See more" />
       </div>
       <div class="row">
-        <div v-for="project in projects" :key="project.id" class="col-12 col-xl-6 app-card-col">
-          <AppCard :project="project" @click="$router.push('/project/' + project.id)" />
+        <div
+          v-for="project in projects"
+          :key="project.id"
+          class="col-12 col-xl-6 app-card-col"
+        >
+          <AppCard
+            :project="project"
+            @click="$router.push('/project/' + project.id)"
+          />
         </div>
       </div>
     </div>
@@ -20,7 +31,11 @@
         <SectionTitle title="Learned skills" link-text="See more" />
       </div>
       <div class="row">
-        <div v-for="skill in skills" :key="skill.id" class="col-12 col-sm-6 col-md-3 skill-card-col">
+        <div
+          v-for="skill in skills"
+          :key="skill.id"
+          class="col-12 col-sm-6 col-md-3 skill-card-col"
+        >
           <SkillCard :title="skill.title" />
         </div>
       </div>

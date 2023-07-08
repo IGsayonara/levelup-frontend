@@ -20,10 +20,7 @@ import MobileNavigation from '@/components/AppHeader/MobileNavigation.vue';
 const { currentBreakpoint } = useViewpoint();
 
 const isMobileNavigation = computed(() => {
-  return [
-    'xs',
-    'sm',
-  ].includes(currentBreakpoint.value);
+  return ['xs', 'sm'].includes(currentBreakpoint.value);
 });
 </script>
 

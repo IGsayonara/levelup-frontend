@@ -26,4 +26,4 @@ module.exports = {
     // do not cover main.ts because it is not testable
     '!src/main.ts',
   ],
-}
+};

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div v-if="!isError" class="container">
+    <div v-if="!isError && project" class="container">
       <div class="section-title-wrapper">
         <SectionTitle :title="project.title" />
       </div>
@@ -16,8 +16,8 @@ import { onBeforeRouteUpdate } from 'vue-router';
 import { idGuard } from '@/router/middlewares/correctParams';
 import { useStore } from 'vuex';
 import { ProjectActions } from '@/store/modules/project/action-types';
-import AppCard from '@/components/AppCard/index';
-import SectionTitle from '@/components/SectionTitle/index';
+import AppCard from '@/components/AppCard/index.vue';
+import SectionTitle from '@/components/SectionTitle/index.vue';
 
 interface Props {
   id: number;

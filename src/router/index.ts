@@ -1,9 +1,9 @@
-import { createMemoryHistory, createRouter } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import { routes } from '@/router/routes/routes';
 import { isLoginGuard } from '@/router/middlewares/user';
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes,
 });
 

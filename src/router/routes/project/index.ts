@@ -32,6 +32,7 @@ export const ProjectRoute: RouteRecordRaw = {
         to: '/',
         text: () => {
           return computed(() => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             return store?.state.ProjectModule.title;
           });

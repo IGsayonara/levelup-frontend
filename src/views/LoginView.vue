@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import AppButton from '@/components/AppButton';
+import AppButton from '@/components/AppButton/index.vue';
 import { useRouter } from 'vue-router';
 import { authLogin } from '@/api/auth';
 

@@ -1,5 +1,4 @@
 <template>
-  <div>123</div>
   <section class="banner-wrapper">
     <AppBanner
       description="Done by <span style='color: #ff8c00;'>Ihor Didunik</span> during fulfilment of personal development plan"

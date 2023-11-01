@@ -8,7 +8,11 @@
       </div>
     </template>
   </AppModal>
-  <FontAwesomeIcon class="burger-button" icon="fa-solid fa-bars" @click="open" />
+  <FontAwesomeIcon
+    class="burger-button"
+    icon="fa-solid fa-bars"
+    @click="open"
+  />
 </template>
 
 <script setup>

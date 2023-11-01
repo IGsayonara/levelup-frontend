@@ -23,7 +23,8 @@ import { Breadcrumb } from '@/types/breadcrumbs';
 const router = useRouter();
 
 const breadcrumbs = computed(() => {
-  const metaCrumbs = router.currentRoute.value.meta?.breadCrumbs as Array<Breadcrumb>;
+  const metaCrumbs = router.currentRoute.value.meta
+    ?.breadCrumbs as Array<Breadcrumb>;
   return metaCrumbs?.map((el) => {
     const tempEl = { ...el };
     if (typeof tempEl.text === 'function') {

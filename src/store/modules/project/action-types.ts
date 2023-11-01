@@ -5,15 +5,7 @@ export enum _ProjectActions {
 
 // @ts-ignore
 export const ProjectActions: typeof _ProjectActions = Object.fromEntries(
-  Object.entries(_ProjectActions).map(
-    ([
-      key,
-      value,
-    ]) => {
-      return [
-        key,
-        'ProjectModule/' + value,
-      ];
-    }
-  )
+  Object.entries(_ProjectActions).map(([key, value]) => {
+    return [key, 'ProjectModule/' + value];
+  })
 );

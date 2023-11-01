@@ -5,15 +5,7 @@ export enum _UserActions {
 
 // @ts-ignore
 export const UserActions: typeof _UserActions = Object.fromEntries(
-  Object.entries(_UserActions).map(
-    ([
-      key,
-      value,
-    ]) => {
-      return [
-        key,
-        'UserModule/' + value,
-      ];
-    }
-  )
+  Object.entries(_UserActions).map(([key, value]) => {
+    return [key, 'UserModule/' + value];
+  })
 );

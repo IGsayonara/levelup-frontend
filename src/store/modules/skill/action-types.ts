@@ -5,15 +5,7 @@ export enum _SkillActions {
 
 // @ts-ignore
 export const SkillActions: typeof _SkillActions = Object.fromEntries(
-  Object.entries(_SkillActions).map(
-    ([
-      key,
-      value,
-    ]) => {
-      return [
-        key,
-        'SkillModule/' + value,
-      ];
-    }
-  )
+  Object.entries(_SkillActions).map(([key, value]) => {
+    return [key, 'SkillModule/' + value];
+  })
 );

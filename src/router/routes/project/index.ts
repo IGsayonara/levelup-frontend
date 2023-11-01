@@ -15,7 +15,8 @@ export const ProjectRoute: RouteRecordRaw = {
 
   beforeEnter: idGuard,
 
-  component: () => import(/* webpackChunkName: "project" */ '@/views/ProjectView.vue'),
+  component: () =>
+    import(/* webpackChunkName: "project" */ '@/views/ProjectView.vue'),
 
   meta: {
     breadCrumbs: [
@@ -31,6 +32,7 @@ export const ProjectRoute: RouteRecordRaw = {
         to: '/',
         text: () => {
           return computed(() => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             return store?.state.ProjectModule.title;
           });

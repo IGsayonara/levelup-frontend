@@ -6,7 +6,11 @@
         <div class="modal-content">
           <header v-if="$slots.header">
             <slot name="header"></slot>
-            <FontAwesomeIcon class="close-button" icon="fa-solid fa-close" @click="runCloseAnimation" />
+            <FontAwesomeIcon
+              class="close-button"
+              icon="fa-solid fa-close"
+              @click="runCloseAnimation"
+            />
           </header>
           <div class="app-modal_content">
             <slot></slot>

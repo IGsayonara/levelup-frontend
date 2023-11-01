@@ -5,6 +5,7 @@ import { ProjectsModule } from '@/store/modules/projects';
 import { UserModule } from '@/store/modules/user';
 
 // define your typings for the store state
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface State {}
 
 // define injection key
